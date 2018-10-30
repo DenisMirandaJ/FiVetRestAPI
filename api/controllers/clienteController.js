@@ -30,7 +30,7 @@ exports.crearCliente = function(req, res) {
   
   exports.eliminarCliente = function(req, res) {
     Cliente.remove({
-      _id: req.body.id
+      _id: req.params.clienteId
     }, function(err, cliente) {
       if (err)
         res.send(err);

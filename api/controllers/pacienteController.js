@@ -30,7 +30,7 @@ exports.crearPaciente = function(req, res) {
   
   exports.eliminarPaciente = function(req, res) {
     Paciente.remove({
-      _id: req.body.id
+      _id: req.params.pacienteId
     }, function(err, paciente) {
       if (err)
         res.send(err);

@@ -30,7 +30,7 @@ exports.crearVeterinario = function(req, res) {
   
   exports.eliminarVeterinario = function(req, res) {
     Veterinario.remove({
-      _id: req.body.id
+      _id: req.params.VeterinarioId
     }, function(err, veterinario) {
       if (err)
         res.send(err);
