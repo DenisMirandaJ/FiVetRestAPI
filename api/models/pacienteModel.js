@@ -8,7 +8,7 @@ var PacienteSchema = new Schema({
     },
     especie: String,
     raza: String,
-    pelaje: String,
+    color: String,
     cliente: {
       type: [String]
     },
@@ -20,7 +20,7 @@ var PacienteSchema = new Schema({
     ultimaVisita: {
       type: Date
     },
-    FechaPrimerIngreso: Date
+    foto: Buffer
 });
 
 module.exports = mongoose.model('paciente', PacienteSchema);

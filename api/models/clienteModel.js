@@ -14,10 +14,8 @@ var ClienteScheme = new Schema({
     email: {
       type: String
     },
-    fechaIngreso: {
-      type: Date,
-      default: Date.now
-    }
+    telefono : String,
+    direccion: String
 });
 
 module.exports = mongoose.model('cliente', ClienteScheme);

@@ -11,6 +11,7 @@ var VeterinarioScheme = new Schema({
         type: String,
         require: "Debe ingresar un rut"
     },
+    email : String
 })
 
 module.exports = mongoose.model('veterinario', VeterinarioScheme);
