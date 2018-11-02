@@ -2,11 +2,11 @@ module.exports = function(app) {
     var registroMedicoControlador = require('../controllers/registroMedicoController');
   
     app.route('/registroMedicos')
-      .get(registroMedicoControlador.listarRegistrosMedicos)
+      .get(registroMedicoControlador.listaRegistrosMedicos)
       .post(registroMedicoControlador.crearRegistroMedico);
   
   
     app.route('/registroMedicos/:registroMedicoId')
-      .get(registroMedicoControlador.buscarRegistroMedico)
+      .get(registroMedicoControlador.buscarRegistrosMedicos)
       .delete(registroMedicoControlador.eliminarRegistroMedico);
 };

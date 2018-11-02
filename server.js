@@ -5,6 +5,7 @@ var express = require('express'),
   Cliente = require('./api/models/clienteModel'),
   Paciente = require('./api/models/pacienteModel'),
   Veterinario = require('./api/models/veterinarioModel'),
+  RegistroMedico = require('./api/models/registroMedicoModel');
   bodyParser = require('body-parser');
   
 // mongoose instance connection url connection
@@ -19,9 +20,11 @@ app.use(bodyParser.json());
 var clienteRoutes = require('./api/routes/clienteRoutes');
 var pacienteRoutes = require('./api/routes/pacienteRoutes');
 var veterinarioRoutes = require('./api/routes/veterinarioRoutes');
+var registroMedicoRoutes = require('./api/routes/registroMedicoRoutes');
 clienteRoutes(app);
 pacienteRoutes(app);
 veterinarioRoutes(app);
+registroMedicoRoutes(app);
 
 app.listen(port);
 
