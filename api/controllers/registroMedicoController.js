@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var RegistroMedico = mongoose.model('registroMedico');
 
 exports.listaRegistrosMedicos = (req, res) => {
+    //TODO: Validar
     RegistroMedico.find({},(err, registrosMedicos) => {
         if(err){
             res.send(err);
@@ -11,6 +12,7 @@ exports.listaRegistrosMedicos = (req, res) => {
 };
 
 exports.buscarRegistrosMedicos = (req, res) => {
+    //TODO: Validar
     RegistroMedico.find({pacienteId : req.params.pacienteId}, (err, registrosMedicos) => {
         if(err) {
             res.send(err);
@@ -20,6 +22,8 @@ exports.buscarRegistrosMedicos = (req, res) => {
 };
 
 exports.crearRegistroMedico = (req, res) => {
+    console.log(req.body);
+    //TODO: Validar
     var nuevoRegistroMedico = new RegistroMedico(req.body);
     nuevoRegistroMedico.save((err, registroMedico) => {
         if(err) {
@@ -30,6 +34,7 @@ exports.crearRegistroMedico = (req, res) => {
 };
 
 exports.eliminarRegistroMedico = (req, res) => {
+    //TODO: Validar
     RegistroMedico.remove({
         _id : req.params.registroMedicoId
     }, (err) => {
