@@ -5,10 +5,10 @@ var Schema = mongoose.Schema;
 var RegistroMedicoSchema = new Schema({
   pacienteId: {
     type : Number,
-    required: true,
+    required: [true, 'El numero del paciente es requerido.'],
     validate : {
       validator : Number.isInteger,
-      message   : 'pacienteId {VALUE} is not an integer value'
+      message   : 'pacienteId {VALUE} no es un numero entero.'
     }
   },
   fecha: {
