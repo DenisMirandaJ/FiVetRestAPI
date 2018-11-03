@@ -9,6 +9,7 @@ Requisitos:
   
 
 para usar:
+
   npm install (en una terminal, en la carpeta raiz del proyecto)
   
   mongod (iniciamos el servidor de la base de datos en otra terminal)
