@@ -38,3 +38,7 @@ exports.crearPaciente = function(req, res) {
       res.json({ message: 'Paciente eliminado correctamente' });
     });
   };
+
+  exports.actualizarPaciente = (req, res) => {
+    //buscar por id y reemplazar
+  }

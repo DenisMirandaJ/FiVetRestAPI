@@ -8,5 +8,6 @@ module.exports = function(app) {
   
     app.route('/veterinarios/:veterinarioId')
       .get(veterinarioControlador.buscarVeterinario)
-      .delete(veterinarioControlador.eliminarVeterinario);
+      .delete(veterinarioControlador.eliminarVeterinario)
+      .put(veterinarioControlador.actualizarVeterinario);
 };

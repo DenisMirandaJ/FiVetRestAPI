@@ -9,5 +9,6 @@ module.exports = function(app) {
       .get(registroMedicoControlador.buscarRegistrosMedicos);
 
     app.route('registrosMedicos/:registroMedicoId')
-    .delete(registroMedicoControlador.eliminarRegistroMedico);
+    .delete(registroMedicoControlador.eliminarRegistroMedico)
+    .put(registroMedicoControlador.actualizarRegistroMedico);
 };

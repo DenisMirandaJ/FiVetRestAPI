@@ -11,7 +11,6 @@ exports.listaRegistrosMedicos = (req, res) => {
 };
 
 exports.buscarRegistrosMedicos = (req, res) => {
-    //TODO: Validar
     console.log(req);
     RegistroMedico.find({pacienteId : req.params.pacienteId}, (err, registrosMedicos) => {
         if(err) {
@@ -47,7 +46,6 @@ exports.crearRegistroMedico = (req, res) => {
 };
 
 exports.eliminarRegistroMedico = (req, res) => {
-    //TODO: Validar
     RegistroMedico.remove({
         _id : req.params.registroMedicoId
     }, (err) => {
@@ -56,4 +54,8 @@ exports.eliminarRegistroMedico = (req, res) => {
         };
         res.json({message : 'Registro eliminado correctamente.'});
     });
+};
+
+exports.actualizarRegistroMedico = (req, res) => {
+    //Buscar por id y reemplazar.
 };

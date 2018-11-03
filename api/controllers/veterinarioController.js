@@ -37,3 +37,7 @@ exports.crearVeterinario = function(req, res) {
       res.json({ message: 'Veterinario eliminado correctamente' });
     });
   };
+
+  exports.actualizarVeterinario = (req, res) => {
+    //buscar por id y reemplazar
+  }
