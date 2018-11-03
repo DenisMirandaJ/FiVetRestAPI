@@ -25,8 +25,8 @@ exports.buscarRegistrosMedicos = (req, res) => {
 exports.crearRegistroMedico = (req, res) => {
     var nuevoRegistroMedico = new RegistroMedico(req.body);
     nuevoRegistroMedico.save((err, registroMedico) => {
-        if(err){
-            //console.log(err);
+        /*if(err){
+            console.log(err);
             if(err.errors.pacienteId) {
                 let pacienteIdError = err.errors.pacienteId;
                 if(pacienteIdError.name == "CastError"){
@@ -38,6 +38,9 @@ exports.crearRegistroMedico = (req, res) => {
                     res.send(pacienteIdError.message);
                 }
             }
+        }*/
+        if(err){
+            res.send(err);
         }
         res.json(registroMedico);
     });

@@ -22,9 +22,10 @@ exports.buscarPaciente = function(req, res) {
 exports.crearPaciente = function(req, res) {
     var nuevoPaciente = new Paciente(req.body);
     nuevoPaciente.save(function(err, paciente) {
-      if (err)
-        res.send(err);
-      res.json(paciente);
+      if(err){
+          res.send(err);
+        res.json(paciente);
+      }
     });
   };
   
