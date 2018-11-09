@@ -26,19 +26,12 @@ exports.buscarPaciente = function(req, res) {
 exports.crearPaciente = function(req, res) {
     var nuevoPaciente = new Paciente(req.body);
     nuevoPaciente.save(function(err, paciente) {
-<<<<<<< HEAD
       if (err)
         {
           res.send(err);
           return;
         }
       res.json(paciente);
-=======
-      if(err){
-          res.send(err);
-        res.json(paciente);
-      }
->>>>>>> 1ad4f10f09e45e2f78aff19d91f76940ba489bd7
     });
   };
   
