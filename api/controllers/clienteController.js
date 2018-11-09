@@ -45,3 +45,7 @@ exports.crearCliente = function(req, res) {
       res.json({ message: 'Cliente eliminado correctamente' });
     });
   };
+
+  exports.actualizarCliente = (req, res) => {
+    //buscar por id y reemplazar
+  }

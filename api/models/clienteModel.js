@@ -5,11 +5,11 @@ var Schema = mongoose.Schema;
 var ClienteScheme = new Schema({
     nombre: {
       type: String,
-      required: "Debe ingresar un nombre"
+      required: [true, "Debe ingresar un nombre"]
     },
     rut : {
       type: String,
-      required: "Debe ingresar un rut"
+      required: [true, "Debe ingresar un rut"]
     },
     email: {
       type: String

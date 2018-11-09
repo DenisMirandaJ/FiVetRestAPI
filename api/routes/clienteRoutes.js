@@ -8,10 +8,9 @@ module.exports = function(app) {
   
     app.route('/clientes/:clienteId')
       .get(clienteControlador.buscarCliente)
-      .delete(clienteControlador.eliminarCliente);
+      .delete(clienteControlador.eliminarCliente)
+      .put(clienteControlador.actualizarCliente);
 };
-
-
 
 
 // var express = require('express');

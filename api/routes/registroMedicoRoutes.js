@@ -1,12 +1,14 @@
 module.exports = function(app) {
     var registroMedicoControlador = require('../controllers/registroMedicoController');
   
-    app.route('/registroMedicos')
-      .get(registroMedicoControlador.listarRegistrosMedicos)
+    app.route('/registrosMedicos')
+      .get(registroMedicoControlador.listaRegistrosMedicos)
       .post(registroMedicoControlador.crearRegistroMedico);
   
-  
-    app.route('/registroMedicos/:registroMedicoId')
-      .get(registroMedicoControlador.buscarRegistroMedico)
-      .delete(registroMedicoControlador.eliminarRegistroMedico);
+    app.route('/registrosMedicos/:pacienteId')
+      .get(registroMedicoControlador.buscarRegistrosMedicos);
+
+    app.route('registrosMedicos/:registroMedicoId')
+    .delete(registroMedicoControlador.eliminarRegistroMedico)
+    .put(registroMedicoControlador.actualizarRegistroMedico);
 };

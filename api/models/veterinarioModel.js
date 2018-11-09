@@ -5,11 +5,11 @@ var Schema = mongoose.Schema;
 var VeterinarioScheme = new Schema({
     nombre: {
         type: String,
-        require: "Debe ingresar un nombre"
+        required: [true, "El nombre del veterinario es requerido."]
     },
     rut: {
         type: String,
-        require: "Debe ingresar un rut"
+        required: [true, "El rut del veterinario es requerido."]
     },
     email : String
 })

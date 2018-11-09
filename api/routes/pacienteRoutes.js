@@ -8,5 +8,6 @@ module.exports = function(app) {
   
     app.route('/pacientes/:pacienteId')
       .get(pacienteControlador.buscarPaciente)
-      .delete(pacienteControlador.eliminarPaciente);
+      .delete(pacienteControlador.eliminarPaciente)
+      .put(pacienteControlador.actualizarPaciente);
 };

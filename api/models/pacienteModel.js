@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 
 var PacienteSchema = new Schema({
     nombre: {
-      type: String
+      type: String,
+      required : [true, 'El nombre del paciente es requerido.']
     },
     especie: String,
     raza: String,
