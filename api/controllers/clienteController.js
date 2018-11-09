@@ -4,7 +4,10 @@ var mongoose = require('mongoose'),
 exports.listaClientes = function(req, res) {
     Cliente.find({}, function(err, cliente) {
         if (err)
+        {
             res.send(err);
+            return;
+        }
         res.json(cliente);
     });
 };
@@ -13,6 +16,7 @@ exports.buscarCliente = function(req, res) {
     Cliente.findById(req.params.clienteId, function(err, cliente) {
       if (err) {
         res.send(err);
+        return;
       }
       console.log(req + "cliente");     
       res.json(cliente);
@@ -22,8 +26,10 @@ exports.buscarCliente = function(req, res) {
 exports.crearCliente = function(req, res) {
     var nuevoCliente = new Cliente(req.body);
     nuevoCliente.save(function(err, cliente) {
-      if (err)
+      if (err){
         res.send(err);
+        return;
+      }
       res.json(cliente);
     });
   };
@@ -32,8 +38,10 @@ exports.crearCliente = function(req, res) {
     Cliente.remove({
       _id: req.params.clienteId
     }, function(err, cliente) {
-      if (err)
+      if (err){
         res.send(err);
+        return;
+      }
       res.json({ message: 'Cliente eliminado correctamente' });
     });
   };
