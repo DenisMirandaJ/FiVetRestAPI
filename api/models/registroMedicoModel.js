@@ -4,12 +4,12 @@ var Schema = mongoose.Schema;
 
 var RegistroMedicoSchema = new Schema({
   pacienteId: {
-    type : Number,
-    required: [true, 'El numero del paciente es requerido.'],
-    validate : {
-      validator : Number.isInteger,
-      message   : 'pacienteId {VALUE} no es un numero entero.'
-    }
+    type : String,
+    required: [true, 'El id del paciente es requerido.'],
+  },
+  clienteId: {
+    type: String,
+    required: [true, 'el id del cliente es requerido.']
   },
   fecha: {
     type: Date,

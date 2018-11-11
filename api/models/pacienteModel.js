@@ -10,7 +10,7 @@ var PacienteSchema = new Schema({
     especie: String,
     raza: String,
     color: String,
-    cliente: {
+    clientes: {
       type: [String]
     },
     castrado: Boolean,

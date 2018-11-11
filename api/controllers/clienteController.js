@@ -5,8 +5,9 @@ exports.listaClientes = function(req, res) {
     Cliente.find({}, function(err, cliente) {
         if (err)
         {
-            res.send(err);
-            return;
+          res.status(400);
+          res.send(err);
+          return;
         }
         res.json(cliente);
     });
@@ -15,6 +16,7 @@ exports.listaClientes = function(req, res) {
 exports.buscarCliente = function(req, res) {
     Cliente.findById(req.params.clienteId, function(err, cliente) {
       if (err) {
+        res.status(400);
         res.send(err);
         return;
       }
@@ -27,6 +29,7 @@ exports.crearCliente = function(req, res) {
     var nuevoCliente = new Cliente(req.body);
     nuevoCliente.save(function(err, cliente) {
       if (err){
+        res.status(400);
         res.send(err);
         return;
       }
@@ -39,6 +42,7 @@ exports.crearCliente = function(req, res) {
       _id: req.params.clienteId
     }, function(err, cliente) {
       if (err){
+        res.status(400);
         res.send(err);
         return;
       }

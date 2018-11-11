@@ -4,6 +4,7 @@ var RegistroMedico = mongoose.model('registroMedico');
 exports.listaRegistrosMedicos = (req, res) => {
     RegistroMedico.find({},(err, registrosMedicos) => {
         if(err){
+            res.status(400);
             res.send(err);
             return;
         }
@@ -15,7 +16,7 @@ exports.buscarRegistrosMedicos = (req, res) => {
     console.log(req);
     RegistroMedico.find({pacienteId : req.params.pacienteId}, (err, registrosMedicos) => {
         if(err) {
-            console.log(err);
+            res.status(400);
             res.send(err);
             return;
         }
@@ -53,6 +54,7 @@ exports.eliminarRegistroMedico = (req, res) => {
         _id : req.params.registroMedicoId
     }, (err) => {
         if(err){
+            res.status(400);
             res.send(err);
             return;
         };

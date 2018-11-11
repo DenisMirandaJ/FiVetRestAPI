@@ -5,8 +5,9 @@ exports.listaPacientes = function(req, res) {
     Paciente.find({}, function(err, paciente) {
         if (err)
         {
-            res.send(err);
-            return;
+          res.status(400);
+          res.send(err);
+          return;
         }
         res.json(paciente);
     });
@@ -15,6 +16,7 @@ exports.listaPacientes = function(req, res) {
 exports.buscarPaciente = function(req, res) {
     Paciente.findById(req.params.pacienteId, function(err, paciente) {
       if (err) {
+          res.status(400);
         res.send(err);
         return;
       }
@@ -27,10 +29,11 @@ exports.crearPaciente = function(req, res) {
     var nuevoPaciente = new Paciente(req.body);
     nuevoPaciente.save(function(err, paciente) {
       if (err)
-        {
-          res.send(err);
-          return;
-        }
+      {
+        res.status(400);
+        res.send(err);
+        return;
+      }
       res.json(paciente);
     });
   };
@@ -40,6 +43,7 @@ exports.crearPaciente = function(req, res) {
       _id: req.params.pacienteId
     }, function(err, paciente) {
       if (err){
+        res.status(400);
         res.send(err);
         return;
       }

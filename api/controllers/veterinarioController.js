@@ -5,8 +5,9 @@ exports.listaVeterinarios = function(req, res) {
     Veterinario.find({}, function(err, veterinario) {
         if (err)
         {
-            res.send(err);
-            return;
+          res.status(400);
+          res.send(err);
+          return;
         }
         res.json(veterinario);
     });
@@ -15,6 +16,7 @@ exports.listaVeterinarios = function(req, res) {
 exports.buscarVeterinario = function(req, res) {
     Veterinario.findById(req.params.veterinarioId, function(err, veterinario) {
       if (err) {
+        res.status(400);
         res.send(err);
         return;
       }
@@ -28,6 +30,7 @@ exports.crearVeterinario = function(req, res) {
     nuevoVeterinario.save(function(err, veterinario) {
       if (err)
       {
+        res.status(400);
         res.send(err);
         return;
       }
@@ -40,6 +43,7 @@ exports.crearVeterinario = function(req, res) {
       _id: req.params.VeterinarioId
     }, function(err, veterinario) {
       if (err){
+        res.status(400);
         res.send(err);
         return;
       }
