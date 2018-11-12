@@ -16,7 +16,7 @@ exports.listaPacientes = function(req, res) {
 exports.buscarPaciente = function(req, res) {
     Paciente.findById(req.params.pacienteId, function(err, paciente) {
       if (err) {
-          res.status(400);
+        res.status(404);
         res.send(err);
         return;
       }

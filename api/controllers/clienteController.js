@@ -16,7 +16,7 @@ exports.listaClientes = function(req, res) {
 exports.buscarCliente = function(req, res) {
     Cliente.findById(req.params.clienteId, function(err, cliente) {
       if (err) {
-        res.status(400);
+        res.status(404);
         res.send(err);
         return;
       }

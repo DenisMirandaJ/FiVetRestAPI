@@ -16,7 +16,7 @@ exports.buscarRegistrosMedicos = (req, res) => {
     console.log(req);
     RegistroMedico.find({pacienteId : req.params.pacienteId}, (err, registrosMedicos) => {
         if(err) {
-            res.status(400);
+            res.status(404);
             res.send(err);
             return;
         }

@@ -16,7 +16,7 @@ exports.listaVeterinarios = function(req, res) {
 exports.buscarVeterinario = function(req, res) {
     Veterinario.findById(req.params.veterinarioId, function(err, veterinario) {
       if (err) {
-        res.status(400);
+        res.status(404);
         res.send(err);
         return;
       }
