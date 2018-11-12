@@ -13,7 +13,7 @@ var PacienteSchema = new Schema({
     clientes: {
       type: [String]
     },
-    castrado: Boolean,
+    castrado: String,
     chip: {
       type: String,
       default: "NO"
