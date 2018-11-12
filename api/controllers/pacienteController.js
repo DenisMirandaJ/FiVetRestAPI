@@ -51,6 +51,10 @@ exports.crearPaciente = function(req, res) {
     });
   };
 
-  exports.actualizarPaciente = (req, res) => {
-    //buscar por id y reemplazar
-  }
+  exports.actualizarPaciente = function(req, res) {
+    Paciente.findOneAndUpdate({_id: req.params.pacienteId}, req.body, {new: true}, function(err, task) {
+      if (err)
+        res.send(err);
+      res.json(task);
+    });
+  };

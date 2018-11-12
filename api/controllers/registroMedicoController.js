@@ -62,6 +62,10 @@ exports.eliminarRegistroMedico = (req, res) => {
     });
 };
 
-exports.actualizarRegistroMedico = (req, res) => {
-    //Buscar por id y reemplazar.
-};
+exports.actualizarRegistroMedico = function(req, res) {
+    RegistroMedico.findOneAndUpdate({_id: req.params.registromedicoId}, req.body, {new: true}, function(err, task) {
+      if (err)
+        res.send(err);
+      res.json(task);
+    });
+  };

@@ -51,6 +51,10 @@ exports.crearVeterinario = function(req, res) {
     });
   };
 
-  exports.actualizarVeterinario = (req, res) => {
-    //buscar por id y reemplazar
-  }
+  exports.actualizarVeterinario = function(req, res) {
+    Veterinario.findOneAndUpdate({_id: req.params.veterinarioId}, req.body, {new: true}, function(err, task) {
+      if (err)
+        res.send(err);
+      res.json(task);
+    });
+  };
