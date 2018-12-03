@@ -51,7 +51,7 @@ exports.crearCliente = function(req, res) {
   };
 
   exports.actualizarCliente = function(req, res) {
-    Cliente.findOneAndUpdate({_id: req.params.clienteId}, req.body, {new: true}, function(err, task) {
+    Cliente.findOneAndUpdate({_id: req.body._id}, req.body, {new: true}, function(err, task) {
       if (err)
         res.send(err);
       res.json(task);

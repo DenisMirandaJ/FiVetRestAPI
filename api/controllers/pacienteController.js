@@ -1,3 +1,4 @@
+const moment = require('moment');
 var mongoose = require('mongoose'),
   Paciente = mongoose.model('paciente');
 
@@ -20,7 +21,10 @@ exports.buscarPaciente = function(req, res) {
         res.send(err);
         return;
       }
-      console.log(req + "paciente");     
+      console.log(req + "paciente");  
+      var date = new Date(Date.now);
+      paciente.ultimaVisita = moment(new Date(paciente.ultimaVisita)).format('YYYY-MM-DDTHH:mm').toString();
+      console.log(paciente);
       res.json(paciente);
     });
   };
@@ -52,9 +56,12 @@ exports.crearPaciente = function(req, res) {
   };
 
   exports.actualizarPaciente = function(req, res) {
-    Paciente.findOneAndUpdate({_id: req.params.pacienteId}, req.body, {new: true}, function(err, task) {
+    Paciente.findOneAndUpdate({_id: req.body._id}, req.body, {new: true}, function(err, task) {
       if (err)
+      {
         res.send(err);
+        console.log(err);
+      }
       res.json(task);
     });
   };

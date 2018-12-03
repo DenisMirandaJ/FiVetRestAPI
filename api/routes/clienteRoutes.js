@@ -3,13 +3,12 @@ module.exports = function(app) {
   
     app.route('/clientes')
       .get(clienteControlador.listaClientes)
-      .post(clienteControlador.crearCliente);
-  
+      .post(clienteControlador.crearCliente)
+      .put(clienteControlador.actualizarCliente);
   
     app.route('/clientes/:clienteId')
       .get(clienteControlador.buscarCliente)
-      .delete(clienteControlador.eliminarCliente)
-      .put(clienteControlador.actualizarCliente);
+      .delete(clienteControlador.eliminarCliente);
 };
 
 
